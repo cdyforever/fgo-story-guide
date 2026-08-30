@@ -109,3 +109,8 @@ footer a{color:var(--blue);}
 .top-btn{position:fixed; left:18px; bottom:18px; z-index:98; background:var(--card); border:1px solid var(--line); color:var(--dim);
   border-radius:10px; padding:8px 12px; cursor:pointer; font-size:12px; display:none;}
 .top-btn:hover{color:var(--gold2); border-color:var(--gold);}
+
+/* 星穹铁道主题：星轨紫强调色 */
+body.theme-hsr{ --gold:#a98fd8; --gold2:#dccdf5; }
+body.theme-hsr .emblem{ background:linear-gradient(135deg,#dccdf5,#7c5fb8); box-shadow:0 0 18px rgba(169,143,216,.25); }
+body.theme-hsr .btn.gold{ background:linear-gradient(135deg,#7c5fb8,#a98fd8); }

@@ -3,7 +3,7 @@ const GAMES = [
   { id: "portal",  name: "🏠 首页",     url: "index.html",  color: null,   status: "live" },
   { id: "fgo",     name: "FGO",         url: "fgo.html",    color: "#d8b45a", status: "live" },
   { id: "genshin", name: "原神",        url: "genshin.html", color: "#5aa893", status: "live" },
-  { id: "hsr",     name: "星穹铁道",    url: null,          color: null,   status: "soon" },
+  { id: "hsr",     name: "星穹铁道",    url: "hsr.html",   color: "#a98fd8", status: "live" },
 ];
 
 function renderGameNav() {
