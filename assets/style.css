@@ -114,3 +114,15 @@ footer a{color:var(--blue);}
 body.theme-hsr{ --gold:#a98fd8; --gold2:#dccdf5; }
 body.theme-hsr .emblem{ background:linear-gradient(135deg,#dccdf5,#7c5fb8); box-shadow:0 0 18px rgba(169,143,216,.25); }
 body.theme-hsr .btn.gold{ background:linear-gradient(135deg,#7c5fb8,#a98fd8); }
+
+/* 剧透分级标签 */
+.lvl{display:inline-block; font-size:11px; padding:1px 8px; border-radius:20px; margin-left:6px; vertical-align:2px;}
+.lvl-e{background:#1d3a2a; color:#7fd6a4; border:1px solid #2c5c40;}
+.lvl-m{background:#3a351d; color:#e0c97f; border:1px solid #5c552c;}
+.lvl-f{background:#3a1d1d; color:#e0857f; border:1px solid #5c2c2c;}
+.pbtns{display:flex; gap:6px; flex-wrap:wrap; margin-top:10px;}
+.pbtn{display:inline-block; font-size:12px; padding:4px 10px; border-radius:7px; border:1px solid var(--line); color:var(--txt); background:var(--card2);}
+.pbtn:hover{border-color:var(--gold); color:var(--gold2);}
+.persona{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px;}
+.persona h5{font-size:14.5px; color:var(--gold2); margin-bottom:4px;}
+.persona p{font-size:13px; color:var(--dim);}
