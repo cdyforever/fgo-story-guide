@@ -177,6 +177,7 @@ def render(meta, navs, stats, toks):
     o.append('<div class="wrap">')
 
     sec_open, act_open = False, False
+    used_acts = set()
     def close_act():
         nonlocal act_open
         if act_open:
@@ -206,6 +207,11 @@ def render(meta, navs, stats, toks):
                 close_act()
                 ver = at.get("ver", "")
                 act_id = "act-" + ver.replace(".", "")
+                n = 2
+                while act_id in used_acts:
+                    act_id = "act-%s-%d" % (ver.replace(".", ""), n)
+                    n += 1
+                used_acts.add(act_id)
                 pr = re.match(r"\[(\d+),\s*(\d+)\]", at.get("p", "[]"))
                 o.append(f'<div class="chapter act" data-act="{act_id}" id="{act_id}">')
                 o.append(f'<div class="head"><div class="emblem">{esc(ver)}</div><div><h3>{inline(title)}{chip(at.get("spoiler"))}</h3>')
