@@ -126,3 +126,26 @@ body.theme-hsr .btn.gold{ background:linear-gradient(135deg,#7c5fb8,#a98fd8); }
 .persona{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px;}
 .persona h5{font-size:14.5px; color:var(--gold2); margin-bottom:4px;}
 .persona p{font-size:13px; color:var(--dim);}
+
+/* 阅读器：进度条 / 剧透遮罩 / 已看勾选 */
+.read-progress{position:fixed; top:10px; right:12px; z-index:60; background:var(--card); border:1px solid var(--line);
+  border-radius:10px; padding:8px 12px; display:flex; gap:10px; align-items:center; font-size:12px; color:var(--dim);
+  box-shadow:0 6px 20px rgba(0,0,0,.45);}
+.read-progress .rp-bar{width:90px; height:6px; background:var(--card2); border-radius:4px; overflow:hidden;}
+.read-progress .rp-fill{height:100%; background:var(--gold); width:0%; transition:width .3s;}
+.read-progress .rp-unspoiled{background:none; border:1px solid var(--line); color:var(--dim); border-radius:6px;
+  padding:2px 8px; cursor:pointer; font-size:11px;}
+.read-progress .rp-unspoiled.on{color:var(--gold2); border-color:var(--gold);}
+.watch{display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--dim); cursor:pointer; margin-top:10px;}
+.act-foot{border-top:1px dashed var(--line); margin-top:14px; display:flex; justify-content:flex-end;}
+.reveal{position:relative; border:1px solid #5c2c2c; border-radius:12px; overflow:hidden; background:var(--card); margin:14px 0;}
+.reveal-body{padding:4px 22px 14px;}
+.reveal:not(.revealed) .reveal-body{filter:blur(7px); pointer-events:none; user-select:none;}
+.reveal:not(.revealed) .reveal-mask{display:flex;}
+.reveal-mask{display:none; position:absolute; inset:0; align-items:center; justify-content:center;
+  background:rgba(12,17,28,.45); color:var(--dim); font-size:13px; cursor:pointer; z-index:2;}
+body.unspoiled .reveal .reveal-body{filter:none;}
+body.unspoiled .reveal .reveal-mask{display:none !important;}
+details.fold{background:var(--card2); border:1px solid var(--line); border-radius:10px; padding:10px 16px; margin:12px 0;}
+details.fold summary{cursor:pointer; color:var(--gold); font-size:14px;}
+details.fold div{margin-top:8px; font-size:14px; color:var(--txt);}

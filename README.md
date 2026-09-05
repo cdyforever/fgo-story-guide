@@ -27,6 +27,18 @@
 
 直接双击 `fgo.html` / `genshin.html` 也可以看（封面图依赖 no-referrer 直连）。如遇 B 站图床防盗链拦截，双击 `启动FGO剧情指南.bat`（需 Node.js）：本地服务器自动打开指南，并把所有封面图改走本地代理（补 Referer + 内存缓存）。
 
+
+## 内容管线（面向维护者）
+
+剧情文案以 Markdown 存放于 `content/*.md`，`python tools/build.py` 构建为同名静态HTML：
+
+- front-matter 定义页面元信息（hero/统计/片源/导航）；
+- `## 章节 {id, spoiler:light|mid|heavy}` / `### 幕 {act, ver, p:[起,止]}` 声明结构与剧透分级；
+- `[[按钮|分P号]]` 自动生成直达合集分P的按钮；
+- `::: reveal`（红级剧透遮挡）、`::: personas`、`::: cards2`、`::: pbtns`、`::: note` 等块级指令。
+
+阅读器交互（assets/reader.js）：每幕「已看」勾选存浏览器本地并汇总为进度条；红级内容默认模糊、点击显影；右上角全局「展开全部剧透」开关。改文案 = 改 Markdown，git diff 友好。
+
 ## 数据与致谢
 
 - 视频数据（标题/分P/播放量/封面）来自 Bilibili 开放接口，抓取于 2026-08-29
